@@ -10,25 +10,15 @@ const App = () => {
   return (
     <Router>
       <div>
-        <h1>User Authentication</h1>
         <nav>
           <ul>
             <li>
               <Link to="/login">Login</Link>
             </li>
             <li>
-              <Link to="/register">Register</Link>
-            </li>
-            <li>
-              <Link to="/forgot-password">Forgot Password</Link>
-            </li>
-            <li>
               <Link to="/posts">Posts</Link>
             </li>
-            <li>
-              <Link to="/new-post">New Post</Link>
-            </li>
-          </ul>
+           </ul>
         </nav>
         <Routes>
           <Route path="/login" element={<LoginForm />} />

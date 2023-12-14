@@ -1,4 +1,3 @@
-// RegistrationForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -7,9 +6,12 @@ const RegistrationForm = () => {
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
   const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleRegistration = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
     try {
       const response = await axios.post('http://localhost:4000/register', {
         email,
@@ -20,11 +22,20 @@ const RegistrationForm = () => {
     } catch (error) {
       setMessage(error.response.data.error);
     }
+
+    setIsSubmitting(false);
   };
 
   return (
     <form className="form" onSubmit={handleRegistration}>
-      <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+      <h2>Register</h2>
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
       <input
         type="password"
         placeholder="Password"
@@ -39,8 +50,10 @@ const RegistrationForm = () => {
         onChange={(e) => setUsername(e.target.value)}
         required
       />
-      <button type="submit">Register</button>
-      {message && <p>{message}</p>}
+      <button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? 'Registering...' : 'Register'}
+      </button>
+      {message && <p className={message.includes('success') ? 'success-message' : 'error-message'}>{message}</p>}
     </form>
   );
 };

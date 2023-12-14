@@ -18,6 +18,7 @@ const ForgotPasswordForm = () => {
 
   return (
     <form className="form" onSubmit={handleForgotPassword}>
+      <h2>Forget-Password</h2>
       <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
       <button type="submit">Reset Password</button>
       {message && <p>{message}</p>}

@@ -1,0 +1,64 @@
+/* NewPostForm.css */
+
+.new-post-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .new-post-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .new-post-form .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .new-post-form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .new-post-form input,
+  .new-post-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .new-post-form input[type='text'],
+  .new-post-form textarea {
+    width: 100%;
+  }
+  
+  .new-post-form button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .new-post-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .new-post-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .new-post-form button:disabled:hover {
+    background-color: #ccc;
+  }
+  
